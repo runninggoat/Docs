@@ -50,3 +50,20 @@ After unpinning the object recursively, we can use garbage collection to remove 
 ```
 ipfs repo gc
 ```
+***Attention! This garbage collection can only work on the node you owned, if other node had view the content you are about to remove, they will be cached on their node, and if they pin the content, the content will be unremovable.***
+
+Through web browser
+---
+To inspect the content you have added in your own node, type the address in your browser.
+```
+http://localhost:8080/ipfs/<file/path hash>
+```
+or curl in your terminal
+```
+http://localhost:8080/ipfs/<file/path hash>
+```
+***Remember the 8080 port you had exposed? The 8080 port is used for HTTP gateway!***
+
+Merkle DAGs
+---
+This is the core concept of IPFS. IPFS stores big binary file in a series of sub-blocks which refered by the parent block to form a Merkle tree. For example, if you store a 800Kb image, the image will be stored in separate blocks. When you use ```ipfs cat``` to read the content of the picture, you are reading the content of the root node wich content is the join of the whole sub-blocks.

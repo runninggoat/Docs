@@ -60,7 +60,7 @@ http://localhost:8080/ipfs/<file/path hash>
 ```
 or curl in your terminal
 ```
-http://localhost:8080/ipfs/<file/path hash>
+curl http://localhost:8080/ipfs/<file/path hash>
 ```
 ***Remember the 8080 port you had exposed? The 8080 port is used for HTTP gateway!***
 
